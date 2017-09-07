@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Demo 頁面</title>
+    <script>
+        function loadData(URL) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        alert("成功抓取資料");
+                        document.getElementById("data").innerHTML = this.responseText;
+                    } else {
+                        alert("抓取資料失敗了。");
+                    }
+                }
+            };
+            xhttp.open("GET", URL, true);
+            xhttp.send();
+        }
+
+    </script>
+</head>
+<body>
+    <h1>CORS Demo 頁面</h1>
+    <p>這個頁面用來 Demo 在 HTML 中呼叫外部 API 時，可能發生的問題</p>
+
+    <p>三個按鈕分別會抓取以下連結的資料：</p>
+    <ul>
+        <li><a href="https://api.天津風.moe/ship.json" target="_blank">https://api.天津風.moe/ship.json</a></li>
+        <li><a href="https://api.harekaze.moe/ship.json" target="_blank">https://api.harekaze.moe/ship.json</a></li>
+        <li><a href="/api/harekaze/ship.json" target="_blank">/api/harekaze/ship.json</a></li>
+    </ul>
+
+    <button onclick="loadData('https://api.天津風.moe/ship.json');">抓取 api.天津風.moe 的資料</button> 
+    <button onclick="loadData('https://api.harekaze.moe/ship.json');">抓取 api.harekaze.moe 的資料</button> 
+    <button onclick="loadData('/api/harekaze/ship.json');">抓取 localhost 的資料</button> 
+
+
+    <h2>抓到的資料</h2>
+    <p id="data"></p>
+</body>
+</html>

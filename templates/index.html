@@ -30,15 +30,14 @@
     <ul>
         <li><a href="https://api.天津風.moe/ship.json" target="_blank">https://api.天津風.moe/ship.json</a></li>
         <li><a href="https://api.harekaze.moe/ship.json" target="_blank">https://api.harekaze.moe/ship.json</a></li>
-        <li><a href="/api/harekaze/ship.json" target="_blank">/api/harekaze/ship.json</a></li>
+        <li><a href="http://localhost:5000/api/ship.json" target="_blank">/api/ship.json</a></li>
+        <li><a href="http://localhost/ship.json" target="_blank">http://localhost/ship.json</a></li>
     </ul>
 
     <button onclick="loadData('https://api.天津風.moe/ship.json');">抓取 api.天津風.moe 的資料</button> 
     <button onclick="loadData('https://api.harekaze.moe/ship.json');">抓取 api.harekaze.moe 的資料</button> 
-
+    <button onclick="loadData('http://localhost:5000/api/ship.json');">抓取 localhost:5000 的資料</button> 
     <button onclick="loadData('http://localhost/ship.json');">抓取 localhost nginx 的資料</button> 
-    <button onclick="loadData('/api/harekaze/ship.json');">抓取 localhost 的資料</button> 
-
 
     <h2>抓到的資料</h2>
     <p id="data"></p>
